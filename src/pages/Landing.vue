@@ -73,7 +73,7 @@
     </main>
     <footer>
       <p class="py-8 text-xl text-center text-primary">
-        Discord | 2021
+        Discord | 2024
       </p>
     </footer>
   </div>
