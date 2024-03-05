@@ -16,7 +16,7 @@ export default function useMemberSocket(guildId: string) {
       cache.setQueryData(key, (data: User[] | undefined): any => {
         if (!data) return
         return [...data, newMember].sort((a, b) =>
-          a.username.localeCompare(b.username)
+          a.username.localeCompare(b.username),
         )
       })
     })
@@ -25,6 +25,7 @@ export default function useMemberSocket(guildId: string) {
       console.log('remove_member', memberId)
       cache.setQueryData(key, (data: User[] | undefined): any => {
         if (!data) return
+        // eslint-disable-next-line no-unsafe-optional-chaining
         return [...data?.filter((m) => m.id !== memberId)]
       })
     })

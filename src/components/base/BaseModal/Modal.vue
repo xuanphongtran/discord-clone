@@ -124,7 +124,7 @@ export default defineComponent({
           close()
         }
       },
-      { immediate: true }
+      { immediate: true },
     )
     watch([backdropLeaving, cardLeaving], (newValues) => {
       if (newValues[0] === false && newValues[1] === false) {

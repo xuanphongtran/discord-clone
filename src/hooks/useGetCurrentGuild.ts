@@ -1,12 +1,12 @@
 import { computed } from 'vue'
 import { useQuery } from 'vue-query'
-import { gKey, mKey } from '@/helpers/querykeys'
 import { getUserGuilds, getGuildMembers } from '@/api/handler/guilds'
 import { Guild, User } from '@/types'
+import { gKey, mKey } from '@/helpers'
 
 export function useGetGuildList() {
   const { data: guilds } = useQuery<Guild[]>(gKey, () =>
-    getUserGuilds().then((res) => res.data)
+    getUserGuilds().then((res) => res.data),
   )
   return guilds
 }
@@ -19,6 +19,6 @@ export function useGetCurrentGuild(guildId: string) {
 export function useGetGuildMembers(guildId: string) {
   const key = mKey(guildId)
   return useQuery<User[]>(key, () =>
-    getGuildMembers(guildId).then((res) => res.data)
+    getGuildMembers(guildId).then((res) => res.data),
   )
 }

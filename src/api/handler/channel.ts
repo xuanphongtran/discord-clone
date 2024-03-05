@@ -13,7 +13,7 @@ export const createChannel = (id: string, body: ChannelPayload) =>
 export const editChannel = (
   guildId: string,
   channelId: string,
-  body: ChannelPayload
+  body: ChannelPayload,
 ) => api.put(`/channels/${guildId}/${channelId}`, body)
 
 export const deleteChannel = (guildId: string, channelId: string) =>

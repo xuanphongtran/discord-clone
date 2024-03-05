@@ -20,7 +20,7 @@ export default function useFriendSocket() {
       cache.setQueryData(fKey, (data: User[] | undefined): any => {
         if (!data) return
         return [...data, newFriend].sort((a, b) =>
-          a.username.localeCompare(b.username)
+          a.username.localeCompare(b.username),
         )
       })
     })

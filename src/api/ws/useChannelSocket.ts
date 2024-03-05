@@ -14,7 +14,7 @@ export default function useChannelSocket(guildId: string, key: string) {
   onMounted(() => {
     socket.emit('joinGuild', guildId)
 
-    socket.on('add_channel', (newChannel : Channel) => {
+    socket.on('add_channel', (newChannel: Channel) => {
       console.log('add_channel', newChannel)
       cache.invalidateQueries(key)
       // cache.setQueryData(key, (data) => {
@@ -39,7 +39,7 @@ export default function useChannelSocket(guildId: string, key: string) {
 
     socket.on('delete_channel', (deleteId: string) => {
       console.log('delete_channel', deleteId)
-      cache.setQueryData(key, (d :any) => {
+      cache.setQueryData(key, (d: any) => {
         const currentPath = `/channels/${guildId}/${deleteId}`
         if (location.pathname === currentPath && guild) {
           if (deleteId === guild.value?.default_channel_id) {
@@ -48,7 +48,7 @@ export default function useChannelSocket(guildId: string, key: string) {
             router.replace(`${guild.value?.default_channel_id}`)
           }
         }
-        return d?.filter((c:any) => c.id !== deleteId)
+        return d?.filter((c: any) => c.id !== deleteId)
       })
     })
 
@@ -56,8 +56,8 @@ export default function useChannelSocket(guildId: string, key: string) {
       console.log('new_notification', id)
       const currentPath = `/channels/${guildId}/${id}`
       if (location.pathname !== currentPath) {
-        cache.setQueryData(key, (d:any) => {
-          const index = d?.findIndex((c:any) => c.id === id)
+        cache.setQueryData(key, (d: any) => {
+          const index = d?.findIndex((c: any) => c.id === id)
           if (index !== -1) {
             d[index] = { ...d[index], hasNotification: true }
           }

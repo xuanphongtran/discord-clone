@@ -22,7 +22,7 @@ export const ModalTitle = defineComponent({
         {
           id,
         },
-        slots.default?.()
+        slots.default?.(),
       )
   },
 })

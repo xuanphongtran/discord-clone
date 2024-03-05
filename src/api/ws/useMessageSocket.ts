@@ -44,7 +44,7 @@ export default function useMessageSocket(channelId: string, key: string) {
         for (let i = 0; i < res.pages.length; i++) {
           const messages = res.pages[i]
           editIndex = messages.findIndex(
-            (m: Message) => m.id === editMessage.id
+            (m: Message) => m.id === editMessage.id,
           )
           if (editIndex !== -1) {
             pageIndex = i
@@ -71,7 +71,7 @@ export default function useMessageSocket(channelId: string, key: string) {
         for (let i = 0; i < res.pages.length; i++) {
           const messages = res.pages[i]
           const toBeRemovedIndex = messages.findIndex(
-            (m: Message) => m.id === toBeRemoved.id
+            (m: Message) => m.id === toBeRemoved.id,
           )
           if (toBeRemovedIndex !== -1) {
             index = i
@@ -81,7 +81,7 @@ export default function useMessageSocket(channelId: string, key: string) {
 
         if (index !== -1) {
           res.pages[index] = res.pages[index].filter(
-            (m: Message) => m.id !== toBeRemoved.id
+            (m: Message) => m.id !== toBeRemoved.id,
           )
         }
         return res
