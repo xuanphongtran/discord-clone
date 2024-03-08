@@ -1,26 +1,17 @@
 import { object, string } from 'yup'
 
 export const LoginSchema = object({
-  email: string().required("Email is required"),
-  password: string().required("Password is required"),
+  email: string().required('Email is required'),
+  password: string().required('Password is required'),
 })
 
 export const RegisterSchema = object({
-  username: string()
-    .min(3)
-    .max(30)
-    .trim()
-    .required("Username is required"),
-  email:
-    string()
-      .email()
-      .lowercase()
-      .required("Email is required"),
-  password:
-    string()
-      .min(6, "Password must be at least 6 characters long")
-      .max(150)
-      .required("Password is required"),
+  username: string().min(3).max(30).trim().required('Username is required'),
+  email: string().email().lowercase().required('Email is required'),
+  password: string()
+    .min(6, 'Password must be at least 6 characters long')
+    .max(150)
+    .required('Password is required'),
 })
 
 // export const UserSchema = yup.object().shape({

@@ -15,6 +15,7 @@ module.exports = {
   ],
   rules: {
     'vue/one-component-per-file': 'off',
+    'vue/multi-word-component-names': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
