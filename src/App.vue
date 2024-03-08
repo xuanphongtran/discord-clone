@@ -1,14 +1,12 @@
 <template>
   <div class="bg-tertiary">
     <router-view />
-    <VueQueryDevTools />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useUser } from '@/stores/user'
 import { useQueryProvider } from 'vue-query'
-import { VueQueryDevTools } from 'vue-query/devtools'
 
 // check login
 const userStr = localStorage.getItem('user') || ''

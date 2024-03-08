@@ -4,7 +4,7 @@
     class="fixed inset-0 z-50 grid bg-black bg-opacity-50 place-items-center"
   >
     <div
-      class="w-4/5 max-w-sm overflow-hidden -translate-y-1/2 rounded-lg  bg-primary"
+      class="w-4/5 max-w-sm overflow-hidden -translate-y-1/2 rounded-lg bg-primary"
     >
       <div class="pt-4 space-y-4">
         <header v-if="state.title" class="px-4">
@@ -21,7 +21,7 @@
             {{ state.cancelText }}
           </button>
           <button
-            class="px-4 py-2 text-white transition bg-red-500 rounded-md  hover:bg-red-600"
+            class="px-4 py-2 text-white transition bg-red-500 rounded-md hover:bg-red-600"
             @click="confirm"
           >
             {{ state.okText }}
@@ -37,7 +37,7 @@ import { defineComponent } from 'vue'
 import { useDialog } from './useDialog'
 
 export default defineComponent({
-  name: 'Dialog',
+  name: 'CustomDialog',
   setup() {
     const { state, cancel, confirm } = useDialog()
 
