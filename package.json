@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.4",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "dayjs": "^1.11.10",
     "pinia": "^2.1.7",
     "socket.io-client": "^4.7.4",
